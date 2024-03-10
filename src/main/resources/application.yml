@@ -1,0 +1,9 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:rootpassword@localhost:27017/
+      database: canuniv
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

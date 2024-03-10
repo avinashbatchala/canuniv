@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Universities List</title>
+</head>
+<body>
+
+<h1>Universities</h1>
+
+<div>
+    <form th:action="@{/refreshUniversities}" method="post">
+        <input type="submit" value="Refresh Universities List" />
+    </form>
+</div>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="university : ${universities}">
+            <td th:text="${university.name}">University Name</td>
+            <td th:text="${university.location}">Location</td>
+            <td th:text="${university.type}">Public/Private</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
